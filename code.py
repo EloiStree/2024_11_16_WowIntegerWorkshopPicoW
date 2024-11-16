@@ -73,7 +73,7 @@ USE_PRINT_LOG = True
 # Connect to Wi-Fi from setting.toml
 
 # 🐿️ It make the workshop easier to learn
-wow = WowInt(False)
+wow = WowInt(True)
 
 # Send a integer message to the server
 wow.push(42)
@@ -295,6 +295,14 @@ def uartToAction(c0, c1):
             wow.push(1032)
         elif c0=='s':
             wow.push(2032)
+        elif c0=='I':
+            wow.push(1087)
+        elif c0=='i':
+            wow.push(2087)
+        elif c0=='O':
+            wow.push(1088)
+        elif c0=='o':
+            wow.push(2088)
     
    
 
