@@ -11,7 +11,7 @@ class HCTTL:
         # UART0 is used for TTL communication with your computer as Serial Port
         self.uart0_ttl = busio.UART(board.GP0, board.GP1, baudrate=9600, bits=8, parity=None, stop=1)
         # UART1 is used for communication with the HC-05 Bluetooth with Android and Quest3
-        self.uart1_hc05 = busio.UART(board.GP4, board.GP5, baudrate=9600, bits=8, parity=None, stop=1)
+        self.uart1_hc05 = busio.UART(board.GP16, board.GP17, baudrate=9600, bits=8, parity=None, stop=1)
         self.char_left = ' '
         self.char_right = ' '
         
