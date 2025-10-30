@@ -81,7 +81,7 @@ mouse  = Mouse(usb_hid.devices)             # Start behaving as mouse
 consumer = ConsumerControl(usb_hid.devices) # Start behaving as media control
 keyboard = Keyboard(usb_hid.devices)
 midi = adafruit_midi.MIDI(midi_in=usb_midi.ports[0], midi_out=usb_midi.ports[1], in_channel=0, out_channel=0)
-
+hcttl = HCTTL()
 
 def create_pin_button(pin_number:int)->digitalio.DigitalInOut:
     pin = digitalio.DigitalInOut(pin_number)
@@ -214,6 +214,9 @@ while True:
     delta_26 = analog_26_last_value - analog_26_previous_value
     delta_27 = analog_27_last_value - analog_27_previous_value
     delta_28 = analog_28_last_value - analog_28_previous_value
+    
+    hcttl.read_and_return_if_right_is_digit()
+    
     time.sleep(0.01)
 
 

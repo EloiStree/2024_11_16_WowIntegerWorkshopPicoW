@@ -58,12 +58,14 @@ class HCTTL:
                 self.uart1_hc05.write(b)
         
         if b:
-            print(b)
+            print("C:",b)
             try:
                 c = b.decode('utf-8')
                 self.char_left=self.char_right
                 self.char_right=c
+                print("LR:",self.char_left+""+ self.char_right)
                 return c.isdigit()
+                
             except Exception as e:
                 print("An error occurred:", e)
         
